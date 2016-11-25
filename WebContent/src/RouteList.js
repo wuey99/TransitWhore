@@ -21,7 +21,7 @@ Ext.define("TransitWhore.RouteListController", {
 	init: function() {
 		console.log(": RouteListConroller: init: ", this.storeId);
 		
-		Ext.create('Ext.data.Store', {
+		this.store = Ext.create('Ext.data.Store', {
 			storeId: this.storeId,
 			model: "TransitWhore.RouteListModel",
 			data:{
@@ -39,13 +39,22 @@ Ext.define("TransitWhore.RouteListController", {
 				}
 			}
 		});  
-		
+
+    	this.routeListPanel = Ext.create('TransitWhore.RouteListView', {
+    		title: 'Routes',
+    		store: this.store,
+    		height: "100%",
+    		width: "25%",
+    		renderTo: Ext.getBody()
+    	});
+    	
+    	
     	this.callParent(); 
 	}
 });
 
 //----------------------------------------------------------------------------------
-Ext.define('TransitWhore.RouteList', {
+Ext.define('TransitWhore.RouteListView', {
     extend: 'Ext.grid.Panel',
     collapsible: true,
     multiSelect: true,

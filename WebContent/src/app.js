@@ -13,18 +13,6 @@ Ext.application({
     	app$.routeList = Ext.create("TransitWhore.RouteListController", {});
     	app$.routeList.init();
 
-    	console.log(": RouteList: ", app$.routeList.storeId);
-
-    	console.log(": storeId: ", app$.routeList.storeId, Ext.data.StoreManager.lookup(app$.routeList.storeId));
-    	
-    	var _routeGrid = Ext.create('TransitWhore.RouteList', {
-    		title: 'Routes',
-    		store: app$.routeList.storeId, // Ext.data.StoreManager.lookup('routeNumStore'),
-    		height: "100%",
-    		width: "25%",
-    		renderTo: Ext.getBody()
-    	});
-    	
     	app$.mainPanel = Ext.create('Ext.panel.Panel', {
     	    renderTo: Ext.getBody(),
             title: 'TransitWhore',
@@ -45,7 +33,7 @@ Ext.application({
     	    ]
     	});
 
-    	app$.mainPanel.add(_routeGrid);
+    	app$.mainPanel.add(app$.routeList.routeListPanel);
     	
     	app$.mainPanel.show();
     }
