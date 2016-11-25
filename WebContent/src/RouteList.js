@@ -1,27 +1,27 @@
 //----------------------------------------------------------------------------------
 (function () {
 //----------------------------------------------------------------------------------
-console.log(": defining RouteGrid: ");
-	
+console.log(": defining RouteList: ");
+
 //----------------------------------------------------------------------------------
-Ext.define("TransitWhore.RouteGridModel", {
+Ext.define("TransitWhore.RouteListModel", {
 	extend: "Ext.data.Model",
 	fields: [
-		{name: 'framework', type: 'string'},
-		{name: 'rocks', type: 'boolean'}   			
+		{name: 'routeNum', type: 'string'},
+		{name: 'desc', type: 'string'}   			
 	]
 });
 
 //----------------------------------------------------------------------------------
 Ext.create('Ext.data.Store', {
-	storeId:'sampleStore',
-	model: "TransitWhore.RouteGridModel",
+	storeId:'routeNumStore',
+	model: "TransitWhore.RouteListModel",
 	data:{
-		'items':[
-			{ 'framework': "Ext JS 4",     'rocks': true  },
-			{ 'framework': "Sencha Touch", 'rocks': true  },
-			{ 'framework': "Ext GWT",      'rocks': true  }, 
-			{ 'framework': "Other Guys",   'rocks': false } 
+		items:[
+			{ routeNum: "Expo", desc: "Santa Monica - 7th Street Metro"  },
+			{ routeNum: "190", desc: "El Monte Station - Cal Poly Pomona"  },
+			{ routeNum: "209", desc: "Crenshaw Green Line - Western/Wilshire"  }, 
+			{ routeNum: "720", desc: "Santa Monica - Montebello" } 
 	]},
 	proxy: {
 		type: 'memory',
@@ -33,22 +33,20 @@ Ext.create('Ext.data.Store', {
 });
 
 //----------------------------------------------------------------------------------
-Ext.define('TransitWhore.RouteGrid', {
+Ext.define('TransitWhore.RouteList', {
     extend: 'Ext.grid.Panel',
     collapsible: true,
     multiSelect: true,
     columns: [
         {
-        	text: 'Framework',
-        	dataIndex: 'framework',
+        	text: 'Route #',
+        	dataIndex: 'routeNum',
         	flex: 1 
 		},
         {
-            xtype: 'booleancolumn', 
-            text: 'Rocks',
-            trueText: 'Yes',
-            falseText: 'No', 
-            dataIndex: 'rocks'
+            text: 'Desc',
+            dataIndex: 'desc',
+            flex: 1
         }
     ],
     
