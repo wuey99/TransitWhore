@@ -14,7 +14,10 @@
 
 		<!-- CLASSES -->
 		<script type="text/javascript" src="src/RouteList.js"></script>  
-                        
+
+		<!-- CLASSES -->
+		<script type="text/javascript" src="src/RouteMap.js"></script>  
+		                        
 		<!-- APP -->
 		<script type="text/javascript" src="src/app.js"></script>    
       

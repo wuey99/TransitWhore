@@ -13,6 +13,9 @@ Ext.application({
     	app$.routeList = Ext.create("TransitWhore.RouteListController", {});
     	app$.routeList.init();
 
+    	app$.routeMap = Ext.create("TransitWhore.RouteMapController", {});
+    	app$.routeMap.init();
+    	
     	app$.mainPanel = Ext.create('Ext.panel.Panel', {
     	    renderTo: Ext.getBody(),
             title: 'TransitWhore',
@@ -34,6 +37,7 @@ Ext.application({
     	});
 
     	app$.mainPanel.add(app$.routeList.routeListPanel);
+    	app$.mainPanel.add(app$.routeMap.routeMapPanel);
     	
     	app$.mainPanel.show();
     }
