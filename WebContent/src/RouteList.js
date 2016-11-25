@@ -3,18 +3,6 @@
 //----------------------------------------------------------------------------------
 console.log(": defining RouteList: ");
 
-var c$ = "app$" + "." + Ext.id();
-
-Ext.define(c$, {
-	extend: "Ext.Base",
-	
-	storeId: "routeListStore"
-});
-
-app$.RouteList = Ext.create(c$, {});
-
-console.log(": RouteList: ", c$, app$.RouteList.storeId);
-
 //----------------------------------------------------------------------------------
 Ext.define("TransitWhore.RouteListModel", {
 	extend: "Ext.data.Model",
@@ -25,22 +13,34 @@ Ext.define("TransitWhore.RouteListModel", {
 });
 
 //----------------------------------------------------------------------------------
-Ext.create('Ext.data.Store', {
-	storeId: app$.RouteList.storeId,
-	model: "TransitWhore.RouteListModel",
-	data:{
-		items:[
-			{ routeNum: "Expo", desc: "Santa Monica - 7th Street Metro"  },
-			{ routeNum: "190", desc: "El Monte Station - Cal Poly Pomona"  },
-			{ routeNum: "209", desc: "Crenshaw Green Line - Western/Wilshire"  }, 
-			{ routeNum: "720", desc: "Santa Monica - Montebello" } 
-	]},
-	proxy: {
-		type: 'memory',
-		reader: {
-			type: 'json',
-			root: 'items'
-		}
+Ext.define("TransitWhore.RouteListController", {
+	extend: 'Ext.app.Controller',
+	
+	storeId: Ext.id(),
+	
+	init: function() {
+		console.log(": RouteListConroller: init: ", this.storeId);
+		
+		Ext.create('Ext.data.Store', {
+			storeId: this.storeId,
+			model: "TransitWhore.RouteListModel",
+			data:{
+				items:[
+					{ routeNum: "Expo", desc: "Santa Monica - 7th Street Metro"  },
+					{ routeNum: "190", desc: "El Monte Station - Cal Poly Pomona"  },
+					{ routeNum: "209", desc: "Crenshaw Green Line - Western/Wilshire"  }, 
+					{ routeNum: "720", desc: "Santa Monica - Montebello" } 
+			]},
+			proxy: {
+				type: 'memory',
+				reader: {
+					type: 'json',
+					root: 'items'
+				}
+			}
+		});  
+		
+    	this.callParent(); 
 	}
 });
 
@@ -63,7 +63,7 @@ Ext.define('TransitWhore.RouteList', {
     ],
     
     initComponent: function () {
-    	this.callParent();
+    	this.callParent(); 
     }
 });
 
