@@ -8,11 +8,11 @@ Ext.application({
     appFolder: 'app',
 
     launch: function() {
-    	var _routeGrid = Ext.create('TransitWhore.RouteGrid', {
-    		title: 'Boolean Column Demo',
+    	var _routeGrid = Ext.create('TransitWhore.RouteList', {
+    		title: 'Routes',
     		store: Ext.data.StoreManager.lookup('sampleStore'),
-    		height: 400,
-    		width: "100%",
+    		height: "100%",
+    		width: "25%",
     		renderTo: Ext.getBody()
     	});
     	

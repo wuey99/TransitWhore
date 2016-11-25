@@ -6,17 +6,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>TransitWhore</title>
 </head>
-        <!-- STYLES -->
-        <link rel="stylesheet" type="text/css" href="libs/resources/css/ext-all.css">
+		<!-- STYLES -->
+		<link rel="stylesheet" type="text/css" href="libs/resources/css/ext-all.css">
  
-        <!-- LIBS -->
-        <script type="text/javascript" src="libs/ext-all-debug.js"></script>
+		<!-- LIBS -->
+		<script type="text/javascript" src="libs/ext-all-debug.js"></script>
 
 		<!-- CLASSES -->
-        <script type="text/javascript" src="src/RouteGrid.js"></script>  
+		<script type="text/javascript" src="src/RouteList.js"></script>  
                         
 		<!-- APP -->
-        <script type="text/javascript" src="src/app.js"></script>    
+		<script type="text/javascript" src="src/app.js"></script>    
   
                 
 	<body>
