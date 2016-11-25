@@ -3,6 +3,18 @@
 //----------------------------------------------------------------------------------
 console.log(": defining RouteList: ");
 
+var c$ = "app$" + "." + Ext.id();
+
+Ext.define(c$, {
+	extend: "Ext.Base",
+	
+	storeId: "routeListStore"
+});
+
+app$.RouteList = Ext.create(c$, {});
+
+console.log(": RouteList: ", c$, app$.RouteList.storeId);
+
 //----------------------------------------------------------------------------------
 Ext.define("TransitWhore.RouteListModel", {
 	extend: "Ext.data.Model",
@@ -14,7 +26,7 @@ Ext.define("TransitWhore.RouteListModel", {
 
 //----------------------------------------------------------------------------------
 Ext.create('Ext.data.Store', {
-	storeId:'routeNumStore',
+	storeId: app$.RouteList.storeId,
 	model: "TransitWhore.RouteListModel",
 	data:{
 		items:[

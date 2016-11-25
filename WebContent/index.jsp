@@ -17,8 +17,7 @@
                         
 		<!-- APP -->
 		<script type="text/javascript" src="src/app.js"></script>    
-  
-                
+      
 	<body>
 		<script>
 		</script>

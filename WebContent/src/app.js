@@ -7,10 +7,12 @@ Ext.application({
 
     appFolder: 'app',
 
-    launch: function() {
+    launch: function() {    
+    	console.log(": storeId: ", app$.RouteList.storeId, Ext.data.StoreManager.lookup(app$.RouteList.storeId));
+    	
     	var _routeGrid = Ext.create('TransitWhore.RouteList', {
     		title: 'Routes',
-    		store: Ext.data.StoreManager.lookup('routeNumStore'),
+    		store: app$.RouteList.storeId, // Ext.data.StoreManager.lookup('routeNumStore'),
     		height: "100%",
     		width: "25%",
     		renderTo: Ext.getBody()
