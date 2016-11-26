@@ -27,7 +27,9 @@
 	    extend: 'Ext.panel.Panel',
 	    
         autoShow: true,
-        layout: 'fit',
+        layout:{
+            type: 'fit'
+        },
         
 	    initComponent: function () {
 	    	this.callParent(); 
