@@ -8,7 +8,7 @@ Ext.application({
     appFolder: 'app',
 
     launch: function() {  
-    	app$ = TransitWhore;
+    	Ext.ns("app$");
     	
     	app$.routeList = Ext.create("TransitWhore.RouteListController", {});
     	app$.routeList.init();
@@ -33,11 +33,11 @@ Ext.application({
 	    		console.log(": onDestroy: panel: ");
     		},
     	    items: [
+    	    	app$.routeList.routeListPanel,
+    	    	{xtype: "splitter"},
+    	    	app$.routeMap.routeMapPanel
     	    ]
     	});
-
-    	app$.mainPanel.add(app$.routeList.routeListPanel);
-    	app$.mainPanel.add(app$.routeMap.routeMapPanel);
     	
     	app$.mainPanel.show();
     }

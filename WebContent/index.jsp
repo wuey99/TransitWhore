@@ -10,12 +10,12 @@
 		<link rel="stylesheet" type="text/css" href="libs/resources/css/ext-all.css">
  
 		<!-- LIBS -->
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCettAqrXFGI2-AX_UC4BVR8BdEaBXpxnc"></script>
 		<script type="text/javascript" src="libs/ext-all-debug.js"></script>
-
+    
 		<!-- CLASSES -->
+		<script type="text/javascript" src="libs/GMapPanel.js"></script>  
 		<script type="text/javascript" src="src/RouteList.js"></script>  
-
-		<!-- CLASSES -->
 		<script type="text/javascript" src="src/RouteMap.js"></script>  
 		                        
 		<!-- APP -->
