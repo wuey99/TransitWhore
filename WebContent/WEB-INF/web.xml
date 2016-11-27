@@ -9,4 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description>RouteList</description>
+    <display-name>RouteList</display-name>
+    <servlet-name>RouteList</servlet-name>
+    <servlet-class>com.kablooey.web.json.RouteList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RouteList</servlet-name>
+    <url-pattern>/RouteList</url-pattern>
+  </servlet-mapping>
 </web-app>

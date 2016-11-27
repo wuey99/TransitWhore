@@ -29,6 +29,7 @@ console.log(": defining RouteList: ");
 						{ routeNum: "209", desc: "Crenshaw Green Line - Western/Wilshire"  }, 
 						{ routeNum: "720", desc: "Santa Monica - Montebello" } 
 				]},
+				/*
 				proxy: {
 					type: 'memory',
 					reader: {
@@ -36,8 +37,31 @@ console.log(": defining RouteList: ");
 						root: 'items'
 					}
 				}
+				*/
+				proxy: {
+					type: 'ajax',
+					url: 'RouteList',
+					pageParam: false,
+					startParam: false,
+					limitParam: false,
+					reader: {
+						type: 'json',
+						root: 'items'
+					}
+				}
 			});  
 	
+			console.log(": ", this.store.getProxy());
+			
+			this.store.load({
+			    scope: this,
+			    callback: function(records, operation, success) {
+			        // the operation object
+			        // contains all of the details of the load operation
+			        console.log(": loaded: ", records, operation, success);
+			    }
+			});
+			
 	    	this.routeListPanel = Ext.create('TransitWhore.RouteListView', {
 	    		title: 'Routes',
 	    		store: this.store,
