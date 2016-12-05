@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="libs/resources/css/ext-all.css">
  
 		<!-- LIBS -->
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCettAqrXFGI2-AX_UC4BVR8BdEaBXpxnc"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXsNCqSyHWCV_rMc-6yFNKHHQRWS1lQ6g"></script>
 		<script type="text/javascript" src="libs/ext-all-debug.js"></script>
     
 		<!-- CLASSES -->
