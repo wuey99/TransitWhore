@@ -3,22 +3,22 @@
 //----------------------------------------------------------------------------------
 Ext.application({
     requires: ['Ext.container.Viewport'],
-    name: 'TransitWhore',
+    name: 'TransitHound',
 
     appFolder: 'app',
 
     launch: function() {  
     	Ext.ns("app$");
     	
-    	app$.routeList = Ext.create("TransitWhore.RouteListController", {});
-    	app$.routeList.init();
+    	app$.routeListController = Ext.create("TransitWhore.RouteListController", {});
+    	app$.routeListController.init();
 
-    	app$.routeMap = Ext.create("TransitWhore.RouteMapController", {});
-    	app$.routeMap.init();
+    	app$.routeMapController = Ext.create("TransitWhore.RouteMapController", {});
+    	app$.routeMapController.init();
     	
     	app$.mainPanel = Ext.create('Ext.panel.Panel', {
     	    renderTo: Ext.getBody(),
-            title: 'TransitWhore',
+            title: 'TransitHound',
             layout:{
                 type: 'hbox'
             },
@@ -33,11 +33,21 @@ Ext.application({
 	    		console.log(": onDestroy: panel: ");
     		},
     	    items: [
-    	    	app$.routeList.routeListPanel,
+    	    	app$.routeListController.routeListPanel,
     	    	{xtype: "splitter"},
-    	    	app$.routeMap.routeMapPanel
+    	    	app$.routeMapController.routeMapPanel
     	    ]
     	});
+    	
+    	app$.routeMapController.getGMapPanel().addListener(
+    		"mapready",
+    		function () {
+    			console.log(": GMapPanel ready: ");
+    			
+    			app$.routeMapController.getGMapPanel().addFusionTablesLayer("1sp1YKyolOo5y8om7NSUEmLOYOK09aBcdxELQlVXY");
+    		},
+    		this
+    	);
     	
     	app$.mainPanel.show();
     }

@@ -52,6 +52,19 @@ Ext.define('Ext.ux.GMapPanel', {
         Ext.each(this.markers, this.addMarker, this);
         this.fireEvent('mapready', this, this.gmap);
     },
+
+    addFusionTablesLayer: function(_docId) {
+        var _layer = new google.maps.FusionTablesLayer({
+        	query: {
+        		select: '*',
+        		from: _docId
+        	}
+        });
+        
+        console.log(": ---->: ", this.gmap);
+        
+        _layer.setMap(this.gmap);    	
+    },
     
     addMarker: function(marker) {
         marker = Ext.apply({

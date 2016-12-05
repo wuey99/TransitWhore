@@ -19,6 +19,14 @@
 	    		width: "75%",
 	    		renderTo: Ext.getBody()
 	    	})
+		},
+	
+		getRouteMapPanel: function() {
+			return this.routeMapPanel
+		},
+		
+		getGMapPanel: function() {
+			return this.routeMapPanel.getGMapPanel();
 		}
 	});
 	
@@ -35,26 +43,19 @@
 	    	this.callParent(); 
 	    },
 	    
+	    getGMapPanel: function() {
+	    	return this.getComponent("gmappanel");
+	    },
+	    
         items: [
         	{
 	            xtype: 'gmappanel',
+	            itemId: "gmappanel",
 	            center: {
-	                geoCodeAddr: '4 Yawkey Way, Boston, MA, 02215-3409, USA',
-	                marker: {title: 'Fenway Park'}
+	                geoCodeAddr: 'Los Angeles',
+	                marker: {title: 'Los Angeles'}
 	            },
 	            markers: [{
-	                lat: 42.339641,
-	                lng: -71.094224,
-	                title: 'Boston Museum of Fine Arts',
-	                listeners: {
-	                    click: function(e){
-	                        Ext.Msg.alert('It\'s fine', 'and it\'s art.');
-	                    }
-	                }
-	            },{
-	                lat: 42.339419,
-	                lng: -71.09077,
-	                title: 'Northeastern University'
 	            }]
         	}
         ]
