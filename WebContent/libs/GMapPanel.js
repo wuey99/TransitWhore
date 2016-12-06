@@ -38,9 +38,9 @@ Ext.define('Ext.ux.GMapPanel', {
         var options = Ext.apply({}, this.mapOptions);
         
         options = Ext.applyIf(options, {
-            zoom: 14,
+            zoom: 11,
             center: center,
-            mapTypeId: google.maps.MapTypeId.HYBRID
+            mapTypeId: google.maps.MapTypeId.ROADMAP
         });
         this.gmap = new google.maps.Map(this.body.dom, options);
         if (marker) {
@@ -53,10 +53,10 @@ Ext.define('Ext.ux.GMapPanel', {
         this.fireEvent('mapready', this, this.gmap);
     },
 
-    addFusionTablesLayer: function(_docId) {
+    addFusionTablesLayer: function(_query, _docId) {
         var _layer = new google.maps.FusionTablesLayer({
         	query: {
-        		select: '*',
+        		select: _query,
         		from: _docId
         	}
         });

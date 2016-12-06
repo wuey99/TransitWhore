@@ -7,13 +7,13 @@
 	]);
 	
 	//----------------------------------------------------------------------------------
-	Ext.define("TransitWhore.RouteMapController", {
+	Ext.define("TransitHound.RouteMapController", {
 		extend: 'Ext.app.Controller',
 		
 		init: function() {
 	    	this.callParent(); 
 	    	
-	    	this.routeMapPanel = Ext.create("TransitWhore.RouteMapView", {
+	    	this.routeMapPanel = Ext.create("TransitHound.RouteMapView", {
 	    		title: 'Map',
 	    		height: "100%",
 	    		width: "75%",
@@ -31,7 +31,7 @@
 	});
 	
 	//----------------------------------------------------------------------------------
-	Ext.define('TransitWhore.RouteMapView', {
+	Ext.define('TransitHound.RouteMapView', {
 	    extend: 'Ext.panel.Panel',
 	    
         autoShow: true,

@@ -10,10 +10,10 @@ Ext.application({
     launch: function() {  
     	Ext.ns("app$");
     	
-    	app$.routeListController = Ext.create("TransitWhore.RouteListController", {});
+    	app$.routeListController = Ext.create("TransitHound.RouteListController", {});
     	app$.routeListController.init();
 
-    	app$.routeMapController = Ext.create("TransitWhore.RouteMapController", {});
+    	app$.routeMapController = Ext.create("TransitHound.RouteMapController", {});
     	app$.routeMapController.init();
     	
     	app$.mainPanel = Ext.create('Ext.panel.Panel', {
@@ -44,7 +44,7 @@ Ext.application({
     		function () {
     			console.log(": GMapPanel ready: ");
     			
-    			app$.routeMapController.getGMapPanel().addFusionTablesLayer("1sp1YKyolOo5y8om7NSUEmLOYOK09aBcdxELQlVXY");
+    			app$.routeMapController.getGMapPanel().addFusionTablesLayer("*", "1sp1YKyolOo5y8om7NSUEmLOYOK09aBcdxELQlVXY");
     		},
     		this
     	);

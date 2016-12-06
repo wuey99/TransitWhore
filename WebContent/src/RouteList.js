@@ -4,7 +4,7 @@
 console.log(": defining RouteList: ");
 
 	//----------------------------------------------------------------------------------
-	Ext.define("TransitWhore.RouteListModel", {
+	Ext.define("TransitHound.RouteListModel", {
 		extend: "Ext.data.Model",
 		fields: [
 			{name: 'routeNum', type: 'string'},
@@ -13,7 +13,7 @@ console.log(": defining RouteList: ");
 	});
 
 	//----------------------------------------------------------------------------------
-	Ext.define("TransitWhore.RouteListController", {
+	Ext.define("TransitHound.RouteListController", {
 		extend: 'Ext.app.Controller',
 		
 		storeId: Ext.id(),
@@ -21,7 +21,7 @@ console.log(": defining RouteList: ");
 		init: function() {
 			this.store = Ext.create('Ext.data.Store', {
 				storeId: this.storeId,
-				model: "TransitWhore.RouteListModel",
+				model: "TransitHound.RouteListModel",
 				data:{
 					items:[
 						{ routeNum: "Expo", desc: "Santa Monica - 7th Street Metro"  },
@@ -62,7 +62,7 @@ console.log(": defining RouteList: ");
 			    }
 			});
 			
-	    	this.routeListPanel = Ext.create('TransitWhore.RouteListView', {
+	    	this.routeListPanel = Ext.create('TransitHound.RouteListView', {
 	    		title: 'Routes',
 	    		store: this.store,
 	    		height: "100%",
@@ -76,7 +76,7 @@ console.log(": defining RouteList: ");
 	});
 
 	//----------------------------------------------------------------------------------
-	Ext.define('TransitWhore.RouteListView', {
+	Ext.define('TransitHound.RouteListView', {
 	    extend: 'Ext.grid.Panel',
 	    collapsible: true,
 	    multiSelect: true,
